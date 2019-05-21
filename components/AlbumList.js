@@ -1,7 +1,8 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
 import axios from 'axios';
-import AlbumDetail from './AlbumDetail.js';
+import AlbumBrief from './AlbumBrief.js';
+
 
 class AlbumList extends React.Component {
   state = { songs: [] };
@@ -13,7 +14,7 @@ componentWillMount() {
 
 renderSongs() {
   return this.state.songs.map(song =>
-     <AlbumDetail key={song.title} song={ song } />
+     <AlbumBrief key={song.title} song={ song } navigation={this.props.navigation} />
    );
  }
 

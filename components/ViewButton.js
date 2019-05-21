@@ -1,13 +1,13 @@
 import React from 'react';
 import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
 
-class Button extends React.Component {
+class ViewButton extends React.Component {
   render () {
     return (
         <TouchableOpacity onPress={this.props.onPress} style={styles.buttonStyle}>
-            <Text style={styles.textStyle}>
+            <View style={styles.textStyle}>
                {this.props.children}
-            </Text>
+            </View>
          </TouchableOpacity>
     );
   }
@@ -35,4 +35,4 @@ const styles = StyleSheet.create ({
 });
 
 
-export default Button;
+export default ViewButton;

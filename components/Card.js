@@ -22,8 +22,6 @@ const styles ={
     borderBottomWidth: 0,
     shadowColor: '#000',
     shadowOffset: { width: 10, height: 20},
-    shadowOpacity: 1,
-    shadowRadius: 2,
     elevation:3,
     zIndex: 999,
     marginLeft: 10,

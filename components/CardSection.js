@@ -18,10 +18,12 @@ const styles = {
   containerStyle: {
     borderBottomWidth: 1,
     padding: 5,
-    backgroundColor: '#fff',
     justifyContent: 'flex-start',
     flexDirection: 'row',
     borderColor: '#ddd',
+    marginLeft: 10,
+    alignSelf: 'flex-start',
+    marginRight: 100,
     position: 'relative'
   }
 };
