@@ -19,7 +19,7 @@ class SongScreen extends React.Component {
 
   playPauseSong() {
     if (this.state.playMessage == "Play") {
-      ReactNativeAudioStreaming.play(BASE_URL + this.props.song.source, {});
+      ReactNativeAudioStreaming.play(BASE_URL + this.state.song.source, {});
       this.setState({playMessage: "Pause"});
     }
     else {
@@ -29,25 +29,26 @@ class SongScreen extends React.Component {
   }
 
   render() {
+    const { params } = this.props.navigation.state;
     return (
       <Card>
         <CardSection>
           <View style={styles.thumbnailContainerStlye}>
           <Image
             style={styles.thumbnailStyle}
-            source={{ uri: BASE_URL + this.props.song.image }}
+            source={{ uri: BASE_URL + params.song.image }}
           />
           </View>
           <View>
-             <Text style={styles.headerTextStyle}>{this.props.song.title}</Text>
-             <Text>{this.props.song.artist}</Text>
+             <Text style={styles.headerTextStyle}>{params.song.title}</Text>
+             <Text>{params.song.artist}</Text>
           </View>
         </CardSection>
 
         <CardSection>
            <Image
              style={styles.imageStyle}
-             source={{ uri: BASE_URL + this.props.song.image }}
+             source={{ uri: BASE_URL + params.song.image }}
            />
         </CardSection>
 
@@ -55,7 +56,7 @@ class SongScreen extends React.Component {
             <Button onPress={() => this.playPauseSong()}>
                {this.state.playMessage}
             </Button>
-            <Button onPress={() => Linking.openURL(this.props.song.site)}>
+            <Button onPress={() => Linking.openURL(params.song.site)}>
                View Online
             </Button>
         </CardSection>
