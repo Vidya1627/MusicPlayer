@@ -17,9 +17,9 @@ class SongScreen extends React.Component {
     };
   }
 
-  playPauseSong() {
+  playPauseSong(song) {
     if (this.state.playMessage == "Play") {
-      ReactNativeAudioStreaming.play(BASE_URL + this.state.song.source, {});
+      ReactNativeAudioStreaming.play(BASE_URL + song.source, {});
       this.setState({playMessage: "Pause"});
     }
     else {
@@ -53,7 +53,7 @@ class SongScreen extends React.Component {
         </CardSection>
 
         <CardSection>
-            <Button onPress={() => this.playPauseSong()}>
+            <Button onPress={() => this.playPauseSong(params.song)}>
                {this.state.playMessage}
             </Button>
             <Button onPress={() => Linking.openURL(params.song.site)}>
